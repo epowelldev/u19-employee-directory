@@ -1,0 +1,2 @@
+export const CLEAR_FILTER = "CLEAR_FILTER";
+export const FILTER_USERS = "FILTER_USERS";
