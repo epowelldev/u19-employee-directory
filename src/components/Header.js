@@ -4,8 +4,8 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 
 function Header() {
   return (
-    <Jumbotron fluid>
-      <Container>
+    <Jumbotron fluid style={{backgroundColor:"#70c274",color:"black"}}>
+      <Container style={{display:"flex", alignItems:"center", flexDirection:"column"}}>
         <h1>Employee Directory</h1>
         <h5>Find the one you are looking for...</h5>
       </Container>

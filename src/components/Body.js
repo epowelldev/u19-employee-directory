@@ -8,17 +8,10 @@ const Body = () => {
   const appContext = useContext(AppContext);
   const {users, filtered} = appContext;
 
-  // if(users.length === 0) {
-  //   return <h1>Please load an employee list.</h1>
-  // }
-
   return (
     <Fragment>
-
       <BasicGrid>
-
         <UserFilter />
-
         {filtered !== null
           ? filtered.map(user => (
             <EmployeeCard user={user} /> ))
@@ -27,7 +20,6 @@ const Body = () => {
           ))
         }
       </BasicGrid>
-
     </Fragment>
   );
 };

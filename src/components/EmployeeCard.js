@@ -1,21 +1,18 @@
-import { Fragment, useContext } from "react";
+import { Fragment } from "react";
 import { Card } from "react-bootstrap";
-import PropTypes from "prop-types";
-import AppContext from "../context/app/appContext";
 
 const EmployeeCard = ({user}) => {
-  const appContext = useContext(AppContext);
-  const {users} = appContext;
-
   return(
     <Fragment>
       <Card style={{display:"flex",flexDirection:"row"}} >
-        <Card.Img style={{width:"150px"}} src={user.picture.thumbnail} />
+        <Card.Img style={{width:"175px",height:"175px"}} src={user.picture.large} />
         <Card.Body>
           <Card.Title>{user.name.first} {user.name.last}, AKA {user.login.username}</Card.Title>
           <Card.Text style={{flexWrap:"wrap"}}>
-            <p>{user.location.city}, {user.location.state}</p>
-            <p>{user.email}</p>
+            {user.location.city}, {user.location.state}
+              <br /> {user.location.country}, {user.location.postcode}
+            <br/>{user.email}
+              <br />{user.phone}
           </Card.Text>
         </Card.Body>
       </Card>
@@ -23,8 +20,5 @@ const EmployeeCard = ({user}) => {
   );
 };
 
-EmployeeCard.propTypes = {
-  users: PropTypes.object.isRequired
-}
 
 export default EmployeeCard;
